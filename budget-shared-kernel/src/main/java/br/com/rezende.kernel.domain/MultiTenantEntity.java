@@ -3,10 +3,6 @@ package br.com.rezende.kernel.domain;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 
-/**
- * Created by alonsotd on 10/10/2017.
- */
-
 public abstract class MultiTenantEntity extends Entity {
 
     @NotNull(message = "lblTenantIdNotNull")

@@ -9,9 +9,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Created by canod on 18/07/2017.
- */
 public abstract class Entity extends ModelValidator implements ConcurrencyAware {
     @NotNull
     @Valid

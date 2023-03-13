@@ -6,10 +6,6 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.Objects;
 
-/**
- * Created by canod on 18/07/2017.
- */
-
 public final class TenantId extends ValueObject {
 
     @NotNull(message = "lblNotNullId")
