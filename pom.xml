@@ -12,6 +12,7 @@
   <modules>
     <module>budget-application</module>
     <module>budget-domain</module>
+    <module>budget-shared-kernel</module>
     <module>budget-repository-inmemory</module>
     <module>budget-repository-jpa</module>
     <module>budget-repository-test</module>
