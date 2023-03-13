@@ -1,2 +1,2 @@
-# hexagonal-architecture-repo-testing
-A aplicação de arquitetura hexagonal (portas e adaptadores) com acesso a elementos de infraestrutura.
+# Arquitetura Hexagonal teste de Repositories
+A aplicação de arquitetura hexagonal (portas e adaptadores) com acesso a elementos de infraestrutura como bancos de dados é feita por meio de adaptadores, que são apenas implementações de interfaces (portas) definidas pelo domínio. Neste projeto, forneceremos duas implementações da mesma porta de repositório, uma in-memory e outra baseada em JPA, focando em como testar ambas as implementações com o mesmo conjunto de testes.
