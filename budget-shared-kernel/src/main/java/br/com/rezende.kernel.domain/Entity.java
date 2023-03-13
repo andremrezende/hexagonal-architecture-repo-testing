@@ -45,7 +45,7 @@ public abstract class Entity extends ModelValidator implements ConcurrencyAware 
         return this.getClass().getSimpleName();
     }
 
-    public abstract  String aggregateId();
+    public abstract String aggregateId();
 
     /**
      * Retrieve the events
