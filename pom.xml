@@ -28,6 +28,8 @@
     <testcontainers.version>1.17.6</testcontainers.version>
     <postgresql.version>42.5.4</postgresql.version>
     <jacoco.maven.plugin.version>0.8.4</jacoco.maven.plugin.version>
+    <git-code-format-maven-plugin.version>4.2</git-code-format-maven-plugin.version>
+    <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -150,6 +152,37 @@
               <goal>integration-test</goal>
               <goal>verify</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>com.cosium.code</groupId>
+        <artifactId>git-code-format-maven-plugin</artifactId>
+        <version>${git-code-format-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>install-hooks</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>${maven-enforcer-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>[3.5.4,)</version>
+                </requireMavenVersion>
+              </rules>
+            </configuration>
           </execution>
         </executions>
       </plugin>
