@@ -23,6 +23,7 @@
     <java.version>17</java.version>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
     <spring-boot.version>3.0.2</spring-boot.version>
     <hypersistence-utils-hibernate-60.version>3.1.2</hypersistence-utils-hibernate-60.version>
     <testcontainers.version>1.17.6</testcontainers.version>
@@ -30,6 +31,7 @@
     <jacoco.maven.plugin.version>0.8.4</jacoco.maven.plugin.version>
     <git-code-format-maven-plugin.version>4.2</git-code-format-maven-plugin.version>
     <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
+    <skipFormatCode>false</skipFormatCode>
   </properties>
 
   <dependencyManagement>
@@ -157,6 +159,11 @@
       </plugin>
 
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+      </plugin>
+      <plugin>
         <groupId>com.cosium.code</groupId>
         <artifactId>git-code-format-maven-plugin</artifactId>
         <version>${git-code-format-maven-plugin.version}</version>
@@ -167,24 +174,12 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>${maven-enforcer-plugin.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireMavenVersion>
-                  <version>[3.5.4,)</version>
-                </requireMavenVersion>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
+        <configuration>
+          <skip>${skipFormatCode}</skip>
+          <googleJavaFormatOptions>
+            <aosp>true</aosp>
+          </googleJavaFormatOptions>
+        </configuration>
       </plugin>
     </plugins>
   </build>
