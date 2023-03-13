@@ -1,6 +1,6 @@
 package br.com.rezende.kernel.domain;
 
-import com.twba.kernel.fwk.ValueObject;
+import br.com.rezende.kernel.fwk.ValueObject;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 

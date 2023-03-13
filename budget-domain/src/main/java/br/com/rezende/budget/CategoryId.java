@@ -1,6 +1,6 @@
 package br.com.rezende.budget;
 
-import com.twba.kernel.fwk.ValueObject;
+import br.com.rezende.kernel.fwk.ValueObject;
 
 import java.util.Objects;
 

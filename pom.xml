@@ -27,6 +27,7 @@
     <hypersistence-utils-hibernate-60.version>3.1.2</hypersistence-utils-hibernate-60.version>
     <testcontainers.version>1.17.6</testcontainers.version>
     <postgresql.version>42.5.4</postgresql.version>
+    <jacoco.maven.plugin.version>0.8.4</jacoco.maven.plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -133,6 +134,12 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.maven.plugin.version}</version>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>

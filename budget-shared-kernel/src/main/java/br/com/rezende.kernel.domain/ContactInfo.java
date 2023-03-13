@@ -18,11 +18,11 @@ public class ContactInfo extends ValueObject {
 
     private ContactInfo(List<String> phoneNumbers, List<String> emailAddresses) {
         this.phoneNumbers = phoneNumbers;
-        this.emailAddress = emailAddresses;
+        this.emailAddresses = emailAddresses;
         this.validate();
     }
 
-    public static ContactInfo with(String... emailAddress, String... phoneNumber) {
+    public static ContactInfo with(String emailAddress, String... phoneNumber) {
         return new ContactInfo(Arrays.asList(phoneNumber), Arrays.asList(emailAddress));
     }
 
@@ -40,7 +40,7 @@ public class ContactInfo extends ValueObject {
         if (o == null || getClass() != o.getClass()) return false;
         ContactInfo that = (ContactInfo) o;
         return Objects.equals(phoneNumbers, that.phoneNumbers) &&
-                Objects.equals(emailAddress, that.emailAddress);
+                Objects.equals(emailAddresses, that.emailAddresses);
     }
 
     @Override
@@ -52,6 +52,6 @@ public class ContactInfo extends ValueObject {
         return phoneNumbers.stream().findFirst();
     }
     public Optional<String> getMainEmailAddress() {
-        return emailAddress.stream().findFirst();
+        return emailAddresses.stream().findFirst();
     }
 }
