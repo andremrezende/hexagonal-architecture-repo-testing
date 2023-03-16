@@ -8,11 +8,13 @@ import java.util.Objects;
 public class Product extends MultiTenantEntity {
     private ProductId productId;
     private ProductName productName;
+    private ProductPrice productPrice;
 
-    public Product(ProductId productId, ProductName productName, TenantId tenantId, long version) {
+    public Product(ProductId productId, ProductName productName, ProductPrice productPrice, TenantId tenantId, long version) {
         super(tenantId, version);
         this.productId = productId;
         this.productName = productName;
+        this.productPrice = productPrice;
     }
 
     public ProductName getProductName() {
@@ -21,6 +23,10 @@ public class Product extends MultiTenantEntity {
 
     public ProductId getProductId() {
         return productId;
+    }
+
+    public ProductPrice getProductPrice() {
+        return productPrice;
     }
 
     @Override
