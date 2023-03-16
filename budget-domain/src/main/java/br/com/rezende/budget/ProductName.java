@@ -7,36 +7,31 @@ import java.util.Objects;
 
 public class ProductName extends ValueObject {
     @NotNull
-    private final String realName;
+    private final String name;
 
-    @NotNull
-    private final String fantasyName;
-
-    public ProductName(String realName, String fantasyName) {
-        this.realName = realName;
-        this.fantasyName = fantasyName;
+    public ProductName(String name) {
+        this.name = name;
     }
 
-    public String getRealName() {
-        return realName;
+    public String getName() {
+        return name;
     }
 
-    public String fullName() {
-        return realName + " " + fantasyName;
+    public static ProductName with(String name) {
+        return new ProductName(name);
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProductName that = (ProductName) o;
-        return Objects.equals(realName, that.realName) &&
-                Objects.equals(fantasyName, that.fantasyName);
+        return Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(realName, fantasyName);
+        return Objects.hash(name);
     }
-
 }

@@ -12,11 +12,11 @@ public class ServiceId extends ValueObject {
         this.value = value;
     }
 
-    String value() {
+    public String value() {
         return value;
     }
 
-    static ServiceId of(String value) {
+    public static ServiceId of(String value) {
         if(Objects.isNull(value)) {
             return null;
         }

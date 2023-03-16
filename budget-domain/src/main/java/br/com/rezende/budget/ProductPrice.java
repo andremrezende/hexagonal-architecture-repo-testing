@@ -14,7 +14,7 @@ public class ProductPrice extends Price {
         this.buyPrice = buyPrice;
     }
 
-    static ProductPrice with(Date updated, Double sellPrice, Double buyPrice) {
+    public static ProductPrice with(Date updated, Double sellPrice, Double buyPrice) {
         return new ProductPrice(updated, sellPrice, buyPrice);
     }
 

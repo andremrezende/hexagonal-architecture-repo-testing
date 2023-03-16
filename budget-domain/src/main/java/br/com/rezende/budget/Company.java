@@ -9,8 +9,8 @@ public class Company extends MultiTenantEntity {
     private CompanyId companyId;
     private CompanyName companyName;
 
-    public Company(CompanyId companyId, CompanyName companyName, TenantId tenantId, long version) {
-        super(tenantId, version);
+    public Company(CompanyId companyId, CompanyName companyName, TenantId tenantId, long version, boolean active) {
+        super(tenantId, version, active);
         this.companyId = companyId;
         this.companyName = companyName;
     }

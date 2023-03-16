@@ -10,8 +10,8 @@ public class Service extends MultiTenantEntity {
     private ServiceName serviceName;
     private ProductPrice productPrice;
 
-    public Service(ServiceId serviceId, ServiceName serviceName, ProductPrice productPrice, TenantId tenantId, long version) {
-        super(tenantId, version);
+    public Service(ServiceId serviceId, ServiceName serviceName, ProductPrice productPrice, TenantId tenantId, long version, boolean active) {
+        super(tenantId, version, active);
         this.serviceId = serviceId;
         this.serviceName = serviceName;
         this.productPrice = productPrice;

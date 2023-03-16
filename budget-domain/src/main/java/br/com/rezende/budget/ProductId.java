@@ -12,11 +12,11 @@ public class ProductId extends ValueObject {
         this.value = value;
     }
 
-    String value() {
+    public String value() {
         return value;
     }
 
-    static ProductId of(String value) {
+    public static ProductId of(String value) {
         if(Objects.isNull(value)) {
             return null;
         }
