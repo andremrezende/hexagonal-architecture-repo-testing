@@ -1,4 +1,4 @@
-package br.com.rezende.kernel.domain;
+package br.com.rezende.budget.kernel.domain;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;

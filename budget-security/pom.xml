@@ -12,9 +12,6 @@
     <artifactId>budget-security</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot-starter-security.version>2.2.6.RELEASE</spring-boot-starter-security.version>
     </properties>
 

@@ -28,11 +28,12 @@
     <spring-boot.version>3.0.2</spring-boot.version>
     <hypersistence-utils-hibernate-60.version>3.1.2</hypersistence-utils-hibernate-60.version>
     <testcontainers.version>1.17.6</testcontainers.version>
-    <postgresql.version>42.5.4</postgresql.version>
     <jacoco.maven.plugin.version>0.8.4</jacoco.maven.plugin.version>
     <git-code-format-maven-plugin.version>4.2</git-code-format-maven-plugin.version>
     <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
     <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
+    <jakarta.validation-api.version>3.0.2</jakarta.validation-api.version>
+    <hibernate-validator.version>7.0.2.Final</hibernate-validator.version>
     <skipFormatCode>false</skipFormatCode>
   </properties>
 
@@ -81,11 +82,10 @@
         <scope>import</scope>
       </dependency>
 
-      <!-- Validators and Database -->
+      <!-- Database -->
       <dependency>
-        <groupId>jakarta.validation</groupId>
-        <artifactId>jakarta.validation-api</artifactId>
-        <version>3.0.2</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-validation</artifactId>
       </dependency>
       <dependency>
         <groupId>io.hypersistence</groupId>
@@ -132,14 +132,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
-      <!-- Test -->
-      <dependency>
-        <groupId>org.glassfish</groupId>
-        <artifactId>jakarta.el</artifactId>
-        <version>4.0.2</version>
-        <scope>test</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -169,24 +161,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${maven-compiler-plugin.version}</version>
-      </plugin>
-      <plugin>
-        <groupId>com.cosium.code</groupId>
-        <artifactId>git-code-format-maven-plugin</artifactId>
-        <version>${git-code-format-maven-plugin.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>install-hooks</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <skip>${skipFormatCode}</skip>
-          <googleJavaFormatOptions>
-            <aosp>true</aosp>
-          </googleJavaFormatOptions>
-        </configuration>
       </plugin>
 
       <plugin>

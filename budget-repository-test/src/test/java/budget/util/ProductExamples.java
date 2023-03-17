@@ -1,9 +1,9 @@
-package br.com.rezende.budget.util;
+package budget.util;
 
 import br.com.rezende.budget.budget.Product;
 import br.com.rezende.budget.budget.ProductName;
 import br.com.rezende.budget.budget.ProductPrice;
-import br.com.rezende.kernel.domain.TenantId;
+import br.com.rezende.budget.kernel.domain.TenantId;
 
 import java.util.Date;
 

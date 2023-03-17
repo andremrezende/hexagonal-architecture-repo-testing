@@ -1,7 +1,7 @@
 package br.com.rezende.budget.budget;
 
-import br.com.rezende.kernel.domain.MultiTenantEntity;
-import br.com.rezende.kernel.domain.TenantId;
+import br.com.rezende.budget.kernel.domain.MultiTenantEntity;
+import br.com.rezende.budget.kernel.domain.TenantId;
 
 import java.util.Objects;
 

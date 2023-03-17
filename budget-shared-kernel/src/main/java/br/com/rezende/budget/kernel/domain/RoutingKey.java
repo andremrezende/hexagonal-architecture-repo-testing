@@ -1,4 +1,4 @@
-package br.com.rezende.kernel.domain;
+package br.com.rezende.budget.kernel.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
