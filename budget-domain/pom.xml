@@ -17,6 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
+        <!-- Internal -->
         <dependency>
             <groupId>br.com.rezende</groupId>
             <artifactId>budget-shared-kernel</artifactId>

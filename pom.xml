@@ -32,6 +32,7 @@
     <jacoco.maven.plugin.version>0.8.4</jacoco.maven.plugin.version>
     <git-code-format-maven-plugin.version>4.2</git-code-format-maven-plugin.version>
     <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
+    <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
     <skipFormatCode>false</skipFormatCode>
   </properties>
 
@@ -186,6 +187,27 @@
             <aosp>true</aosp>
           </googleJavaFormatOptions>
         </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>${maven-dependency-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/upload/dependency-jars/</outputDirectory>
+              <useRepositoryLayout>true</useRepositoryLayout>
+              <copyPom>true</copyPom>
+              <addParentPoms>true</addParentPoms>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

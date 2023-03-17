@@ -18,15 +18,13 @@
     </properties>
 
     <dependencies>
+        <!-- Internal -->
         <dependency>
             <groupId>br.com.rezende</groupId>
             <artifactId>budget-domain</artifactId>
         </dependency>
-        <dependency>
-            <groupId>br.com.rezende</groupId>
-            <artifactId>budget-repository-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+
+        <!-- Test -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
