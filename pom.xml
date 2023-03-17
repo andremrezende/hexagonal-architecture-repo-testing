@@ -15,6 +15,7 @@
     <module>budget-shared-kernel</module>
     <module>budget-repository-inmemory</module>
     <module>budget-repository-jpa</module>
+    <module>budget-security</module>
     <module>budget-repository-test</module>
   </modules>
 
@@ -36,6 +37,7 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- Internal -->
       <dependency>
         <groupId>br.com.rezende</groupId>
         <artifactId>budget-domain</artifactId>
@@ -61,6 +63,15 @@
         <artifactId>budget-repository-test</artifactId>
         <version>${project.version}</version>
       </dependency>
+
+      <!-- CDI -->
+      <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>1</version>
+      </dependency>
+
+      <!-- Spring Boot -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
@@ -68,34 +79,25 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>org.testcontainers</groupId>
-        <artifactId>testcontainers-bom</artifactId>
-        <version>${testcontainers.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+
+      <!-- Validators and Database -->
       <dependency>
         <groupId>jakarta.validation</groupId>
         <artifactId>jakarta.validation-api</artifactId>
         <version>3.0.2</version>
       </dependency>
       <dependency>
-        <groupId>org.glassfish</groupId>
-        <artifactId>jakarta.el</artifactId>
-        <version>4.0.2</version>
-        <scope>test</scope>
+        <groupId>io.hypersistence</groupId>
+        <artifactId>hypersistence-utils-hibernate-60</artifactId>
+        <version>${hypersistence-utils-hibernate-60.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.glassfish.web</groupId>
-        <artifactId>javax.el</artifactId>
-        <version>2.2.6</version>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postgresql.version}</version>
       </dependency>
-      <dependency>
-        <groupId>javax.inject</groupId>
-        <artifactId>javax.inject</artifactId>
-        <version>1</version>
-      </dependency>
+
+      <!-- Authentication -->
       <dependency>
         <groupId>io.jsonwebtoken</groupId>
         <artifactId>jjwt-api</artifactId>
@@ -113,25 +115,29 @@
         <version>0.11.1</version>
         <scope>runtime</scope>
       </dependency>
+
+      <!--  Reactive Streams -->
       <dependency>
         <groupId>io.projectreactor</groupId>
         <artifactId>reactor-core</artifactId>
         <version>3.4.24</version>
       </dependency>
+
+      <!-- Containers -->
       <dependency>
-        <groupId>io.hypersistence</groupId>
-        <artifactId>hypersistence-utils-hibernate-60</artifactId>
-        <version>${hypersistence-utils-hibernate-60.version}</version>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers-bom</artifactId>
+        <version>${testcontainers.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
+
+      <!-- Test -->
       <dependency>
-        <groupId>org.hibernate.validator</groupId>
-        <artifactId>hibernate-validator</artifactId>
-        <version>8.0.0.Final</version>
-      </dependency>
-      <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <version>${postgresql.version}</version>
+        <groupId>org.glassfish</groupId>
+        <artifactId>jakarta.el</artifactId>
+        <version>4.0.2</version>
+        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

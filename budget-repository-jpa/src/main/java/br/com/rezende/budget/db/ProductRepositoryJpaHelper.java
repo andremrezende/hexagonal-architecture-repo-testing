@@ -1,8 +1,0 @@
-package br.com.rezende.budget.db;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface ProductRepositoryJpaHelper extends JpaRepository<ProductEntity, String> {
-}
